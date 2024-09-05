@@ -1,4 +1,4 @@
-package a09_quick_p03;
+package a09_quick_p04;
 
 import a08_merge_p12.Aluno;
 
@@ -41,13 +41,14 @@ public class QuickSort {
 		Aluno pivo = alunos[posicaoPivo];
 		for (int i = inicio; i < fim; ++i) {
 			if (alunos[i].compareTo(pivo) < 0) {
-				troca(alunos, i, menoresAteAgora);
+				troca(alunos, i, inicio + menoresAteAgora);
 				menoresAteAgora++;
 			}
 		}
-		troca(alunos, posicaoPivo,  menoresAteAgora);
+		troca(alunos, posicaoPivo, inicio + menoresAteAgora);
 		System.out.println("menoresAteAgora: " + menoresAteAgora);
-		return  menoresAteAgora;
+		System.out.println("nova posicao pivo: " + (inicio + menoresAteAgora));
+		return inicio + menoresAteAgora;
 	}
 
 
